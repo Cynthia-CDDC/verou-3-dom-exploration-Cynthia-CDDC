@@ -1,4 +1,4 @@
-const bookCollection = [
+/*const bookCollection = [
     {
         author: "Agatha Christie",
         genre: "thriller",
@@ -55,4 +55,4 @@ const bookCollection = [
         cover:"./Collection-project/photos book covers/The-Little-Prince.jpg",
     },
 ];
-console.log(bookCollection);
+console.log(bookCollection);*/
