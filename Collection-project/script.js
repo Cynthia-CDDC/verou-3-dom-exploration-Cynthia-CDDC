@@ -1,10 +1,10 @@
-/*const bookCollection = [
+const bookCollection = [
     {
         author: "Agatha Christie",
         genre: "thriller",
         title: "And-Then-There-Were-None",
         synopsis: "First, there were ten - a curious assortment of strangers summoned as weekend guests to a little private island off the coast of Devon. Their host, an eccentric millionaire unknown to all of them, is nowhere to be found. All that the guests have in common is a wicked past they're unwilling to reveal—and a secret that will seal their fate. For each has been marked for murder. A famous nursery rhyme is framed and hung in every room of the mansion. When they realize that murders are occurring as described in the rhyme, terror mounts. One by one they fall prey. Before the weekend is out, there will be none. Who has choreographed this dastardly scheme? And who will be left to tell the tale? Only the dead are above suspicion.",  
-        cover: "./Collection-project/photos-book-covers/And-Then-There-Were-None.jpg",  
+        cover: "./Collection-project/And-Then-There-Were-None.jpg",  
     },
     {
         author:"Robin Hobb",
@@ -55,4 +55,28 @@
         cover:"./Collection-project/photos book covers/The-Little-Prince.jpg",
     },
 ];
-console.log(bookCollection);*/
+console.log(bookCollection);
+
+const newMain = document.createElement("main");
+newMain.className = "mainPart";
+const newSection = document.createElement("section");
+newSection.className = "card";
+const newImage = document.createElement("img");
+newImage.className = "photo";
+const newDiv = document.createElement("div");
+newDiv.className = "info";
+const newPtitle = document.createElement("p");
+newPtitle.className = "title";
+const newPauthor = document.createElement("p");
+newPauthor.className = "author";
+const newPgenre = document.createElement("p");
+newPgenre.className = "genre";
+const newPsynopsis = document.createElement("p");
+newPsynopsis.className = "synopsis";
+console.log(newMain)
+console.log(newSection)
+console.log(newImage)
+console.log(newDiv)
+console.log(newPtitle, newPauthor, newPgenre, newPsynopsis)
+
+
