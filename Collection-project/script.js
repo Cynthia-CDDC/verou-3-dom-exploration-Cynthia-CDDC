@@ -6,6 +6,10 @@ const bodyOfhtml = document.querySelector("body");
 
 bodyOfhtml.appendChild(newMain)
 
+const footerElement = document.querySelector("footer");
+
+bodyOfhtml.insertBefore(newMain, bodyOfhtml.children[1]);
+
 const bookCollection = [
     {
         author: "Agatha Christie",
@@ -103,7 +107,6 @@ for (let book of bookCollection) {
     newPsynopsis.innerHTML = 'synopsis: '+book.synopsis;
     newDiv.appendChild(newPsynopsis)
 }
-
 
 console.log(newMain)
 console.log(newSection)
