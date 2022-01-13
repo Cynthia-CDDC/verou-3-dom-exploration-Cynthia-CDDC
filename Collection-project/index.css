@@ -46,3 +46,6 @@ main {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.synopsis span {
+    font-weight: bolder;
+}
