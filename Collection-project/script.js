@@ -1,14 +1,12 @@
 const newMain = document.createElement("main");
-newMain.className = "mainPart";
+newMain.className = "mainPart";//create class
 console.log(newMain)
 
-const bodyOfhtml = document.querySelector("body");
-
+const bodyOfhtml = document.querySelector("body");//element created directly in html
 bodyOfhtml.appendChild(newMain)
 
-const footerElement = document.querySelector("footer");
-
-bodyOfhtml.insertBefore(newMain, bodyOfhtml.children[1]);
+const footerElement = document.querySelector("footer");//element created directly in html
+bodyOfhtml.insertBefore(newMain, bodyOfhtml.children[1]);//further position main in body: because here header and footer already exists in the body the main default position is after them
 
 const bookCollection = [
     {
@@ -75,6 +73,7 @@ for (let book of bookCollection) {
     const newSection = document.createElement("section");
     newSection.className = "card";
     newMain.appendChild(newSection)
+    console.log(newSection)
 
     const newImage = document.createElement("img");
     newImage.className = "photo";
@@ -108,8 +107,6 @@ for (let book of bookCollection) {
     newDiv.appendChild(newPsynopsis)
 }
 
-console.log(newMain)
-console.log(newSection)
-console.log(newImage)
-console.log(newDiv)
-console.log(newPtitle, newPauthor, newPgenre, newPsynopsis)
+console.log(newMain) //this works because created outside the loop
+console.log(newImage)// this doesn't work because create inside the loop by default only exists in the loop
+//in that case: console.log in the loop
