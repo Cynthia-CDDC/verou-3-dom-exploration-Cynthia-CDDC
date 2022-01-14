@@ -13,7 +13,7 @@ const bookCollection = [
         author: "Agatha Christie",
         genre: "thriller",
         title: "And Then There Were None",
-        synopsis: "First, <span>there</span> were ten. A curious assortment of strangers summoned as weekend guests to a little private island off the coast of Devon. Their host, an eccentric millionaire unknown to all of them, is nowhere to be found. All that the guests have in common is a wicked past they're unwilling to reveal—and a secret that will seal their fate. For each has been marked for murder. A famous nursery rhyme is framed and hung in every room of the mansion. When they realize that murders are occurring as described in the rhyme, terror mounts. One by one they fall prey. Before the weekend is out, there will be none. Who has choreographed this dastardly scheme? And who will be left to tell the tale? Only the dead are above suspicion.",  
+        synopsis: "First, <strong>there</strong> were ten. A curious assortment of strangers summoned as weekend guests to a little private island off the coast of Devon. Their host, an eccentric millionaire unknown to all of them, is nowhere to be found. All that the guests have in common is a wicked past they're unwilling to reveal—and a secret that will seal their fate. For each has been marked for murder. A famous nursery rhyme is framed and hung in every room of the mansion. When they realize that murders are occurring as described in the rhyme, terror mounts. One by one they fall prey. Before the weekend is out, there will be none. Who has choreographed this dastardly scheme? And who will be left to tell the tale? Only the dead are above suspicion.",  
         cover: "./photos/And-Then-There-Were-None.jpg",
     },
     {
@@ -75,10 +75,14 @@ for (let book of bookCollection) {
     newMain.appendChild(newSection)
     console.log(newSection)
 
+    const imgDiv = document.createElement("div")
+    imgDiv.className = "imgDiv";
+    newSection.appendChild(imgDiv)
+
     const newImage = document.createElement("img");
     newImage.className = "photo";
     newImage.src = book.cover;
-    newSection.appendChild(newImage)
+    imgDiv.appendChild(newImage)
 
     const newDiv = document.createElement("div");
     newDiv.className = "info";
@@ -103,7 +107,7 @@ for (let book of bookCollection) {
     
     const newPsynopsis = document.createElement("p");
     newPsynopsis.className = "synopsis";
-    newPsynopsis.innerHTML = 'synopsis: '+book.synopsis;
+    newPsynopsis.innerHTML = '<span>synopsis: </span>'+book.synopsis;
     newDiv.appendChild(newPsynopsis)
 }
 

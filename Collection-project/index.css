@@ -3,49 +3,117 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    padding: 1%;
+@media only screen and (max-width: 424px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+    }
+    header {
+        text-align: center;
+        color:blanchedalmond;
+        background-color: black;
+        width: 100vw;
+        align-items: center;
+    }
+    header p {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .library {
+        max-width: 318px;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    main .card {
+        display: flex;
+        flex-direction: row;
+        padding-top: 1.5%;
+        padding-bottom: 1.5%;
+        width: 100%;
+        margin: 0 0;
+    }
+    .imgDiv {
+        padding: 10px;
+    }
+    .photo {
+        width: 65,25px;
+        height: 105px;
+    }
+    .info {
+        width: 100%;
+    }
+    .synopsis {
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
-header {
-    text-align: center;
-    color:blanchedalmond;
-    background-color: black;
-}
-header p {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.card {
-    display: flex;
-    flex-direction: row;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-}
-.library {
-    max-width: 318px;
-}
-.photo {
-    width: 65,25px;
-    height: 105px;
-}
-.synopsis {
-    max-width: 261px;
-    max-height: 50px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.synopsis span {
-    font-weight: bolder;
+@media only screen and (min-width: 425px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        padding: 1%;
+    }
+    header {
+        text-align: center;
+        color:blanchedalmond;
+        background-color: black;
+        width: 100vw;
+    }
+    .library {
+        max-width: 318px;
+    }
+    header p {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding-top: 1.5%;
+        padding-bottom: 1.5%;
+        padding: 10px;
+    }
+    .imgDiv {
+        width: 200px;
+    }
+    .photo {
+        width: 50%;
+        height: auto;
+    }
+    .info {
+        display: block;
+    }
+    .synopsis {
+        width: 261px;
+        height: 50px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .synopsis span {
+        background-color: coral;
+    }
 }
