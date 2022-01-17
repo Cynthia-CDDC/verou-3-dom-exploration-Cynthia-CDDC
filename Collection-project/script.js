@@ -1,13 +1,4 @@
-const newMain = document.createElement("main");
-newMain.className = "mainPart";//create class
-console.log(newMain)
-
-const bodyOfhtml = document.querySelector("body");//element created directly in html
-bodyOfhtml.appendChild(newMain)
-
-const footerElement = document.querySelector("footer");//element created directly in html
-bodyOfhtml.insertBefore(newMain, bodyOfhtml.children[1]);//further position main in body: because here header and footer already exists in the body the main default position is after them
-
+//create array
 const bookCollection = [
     {
         author: "Agatha Christie",
@@ -24,7 +15,7 @@ const bookCollection = [
         "The most precious commodity in the world."+
         "Like many other legendary wares, it comes only from the Rain River Wilds."+
         
-        "But how can one trade with the Rain Wilders, when only a liveship fashioned from wizardwood can negotiate the perilous waters of the Rain River? Rare and valuable a liveship will quicken only when three members, from successive generations, have died on board. The liveship Vivacia is about to undergo her quickening as Althea Vestrit's father is carried on deck in his death-throes. Althea waits for the ship that she loves more than anything else in the world to awaken. Only to discover that the Vivacia has been signed away in her father’s will to her brutal brother-in-law, Kyle Haven..."+
+        "But how can one trade with the Rain Wilders, when only a liveship fashioned from wizardwood can negotiate the perilous waters of the Rain River? Rare and valuable a liveship will quicken only when three members, from successive generations, have died on board. The liveship Vivacia is about to undergo her quickening as Althea Vestrit's father is carried on deck in his death-throes. Althea waits for the ship that she loves more than anything else in the world to awaken. Only to discover that the Vivacia has been signed away in her father's will to her brutal brother-in-law, Kyle Haven..."+
         
         "Others plot to win or steal a liveship. The Paragon, known by many as the Pariah, went mad, turned turtle, and drowned his crew. Now he lies blind, lonely, and broken on a deserted beach. But greedy men have designs to restore him, to sail the waters of the Rain Wild River once more.",
         cover:"./photos/Ship-of-Magic.jpg",
@@ -65,7 +56,17 @@ const bookCollection = [
         cover:"./photos/The-Little-Prince.jpg",
     },
 ];
-console.log(bookCollection);
+//console.log(bookCollection);
+
+const newMain = document.createElement("main");
+newMain.className = "mainPart";//create class
+//console.log(newMain)
+
+const bodyOfhtml = document.querySelector("body");//element created directly in html
+bodyOfhtml.appendChild(newMain)
+
+const footerElement = document.querySelector("footer");//element created directly in html
+bodyOfhtml.insertBefore(newMain, bodyOfhtml.children[1]);//further position main in body: because here header and footer already exists in the body the main default position is after them
 
 for (let book of bookCollection) {
     console.log(book)
@@ -73,7 +74,6 @@ for (let book of bookCollection) {
     const newSection = document.createElement("section");
     newSection.className = "card";
     newMain.appendChild(newSection)
-    console.log(newSection)
 
     const imgDiv = document.createElement("div")
     imgDiv.className = "imgDiv";
@@ -91,13 +91,11 @@ for (let book of bookCollection) {
     const newPtitle = document.createElement("p");
     newPtitle.className = "title";
     newPtitle.innerHTML = 'title: '+(book.title);
-    console.log('title: '+book.title);
     newDiv.appendChild(newPtitle)
     
     const newPauthor = document.createElement("p");
     newPauthor.className = "author";
     newPauthor.innerHTML = 'author: '+book.author;
-    console.log('author: '+book.author)
     newDiv.appendChild(newPauthor)
     
     const newPgenre = document.createElement("p");
@@ -107,10 +105,24 @@ for (let book of bookCollection) {
     
     const newPsynopsis = document.createElement("p");
     newPsynopsis.className = "synopsis";
-    newPsynopsis.innerHTML = '<span>synopsis: </span>'+book.synopsis;
+    newPsynopsis.innerHTML = '<button class="btnSyn">synopsis: </button>'+'<span>'+book.synopsis +'</span>';//concatination of strings and elements with +
     newDiv.appendChild(newPsynopsis)
 }
 
-console.log(newMain) //this works because created outside the loop
-console.log(newImage)// this doesn't work because create inside the loop by default only exists in the loop
+const SynopBtn = document.getElementsByClassName("btnSyn");
+for (let i = 0; i < SynopBtn.length; i++) {
+    SynopBtn[i].addEventListener("click", SynText);
+}
+function SynText () {
+    const spanTxt = document.getElementsByTagName("span");
+    for(let i = 0; i < spanTxt.length; i++)
+    if (spanTxt[i].style.display === "block") {
+        spanTxt[i].style.display = "none";
+    } else {
+        spanTxt[i].style.display = "block";
+    }
+}
+
+//console.log(newMain) //this works because created outside the loop
+//console.log(newImage)// this doesn't work because create inside the loop by default only exists in the loop
 //in that case: console.log in the loop
